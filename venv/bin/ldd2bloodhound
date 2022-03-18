@@ -1,3 +1,0 @@
-#!/Users/leonardo/PycharmProjects/rdp-api/venv/bin/python
-from ldapdomaindump import convert
-convert.ldd2bloodhound()
