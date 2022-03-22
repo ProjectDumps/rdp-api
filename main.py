@@ -17,4 +17,11 @@ def check_rdp_method(ip: str, port: int, username: str, password: str):
             return {"result": "Access Denied"}
     except:
         return {"result": "Error"}
-
+    
+@app.get("/checkGEO/{ip}")
+def check_rdp_geo(ip: str):
+    try:
+        geo_information = geo_processor.detect_geo(ip)
+        return {"city": geo_information[0], "country": geo_information[1]}
+    except:
+        return {"result": "Error"}
